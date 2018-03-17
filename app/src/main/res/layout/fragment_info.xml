@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:gravity="center"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageview_photo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/id123456781"
+                android:scaleType="centerCrop"
+                android:clickable="false"
+                app:civ_border_width="0dp"
+                app:civ_border_color="#FFFFFFFF"
+                android:layout_centerVertical="true"
+                />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toEndOf="@+id/imageview_photo"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                >
+
+                <TextView
+                    android:id="@+id/textview_lastname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Алтынбеков"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/textview_firstname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Казтуган"
+                    android:textColor="@color/gray"
+                    android:textSize="14dp"
+                    />
+
+                <TextView
+                    android:id="@+id/textview_fathername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Жашмидович"
+                    android:textColor="@color/gray"
+                    android:textSize="14dp"
+                    />
+
+                <TextView
+                    android:id="@+id/textview_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Мужчина"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/textview_scan"
+        android:layout_below="@+id/cardview"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingStart="24dp"
+            >
+
+            <ru.health.assistance.presentation.controls.InfoRowView
+                android:id="@+id/birthdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="День рождения"
+                app:info="25 ноября 1971г."
+                />
+
+            <ru.health.assistance.presentation.controls.InfoRowView
+                android:id="@+id/birthplace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Место рождения"
+                app:info="Казахстан, г.Астана"
+                />
+
+            <ru.health.assistance.presentation.controls.InfoRowView
+                android:id="@+id/nationality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Гражданство"
+                app:info="Гражданин Казахстана"
+                />
+
+            <ru.health.assistance.presentation.controls.InfoRowView
+                android:id="@+id/livingplace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Место жительства"
+                app:info="119049, г.Москва\nул.Донская, д.8 стр.1"
+                />
+
+            <ru.health.assistance.presentation.controls.InfoRowView
+                android:id="@+id/cause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Обстоятельство переселения"
+                app:info="В связи с работой"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textview_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/info_scan_button_title"
+        android:textColor="@color/white"
+        android:background="@drawable/gray_rounded"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textAllCaps="true"
+        />
+
+</RelativeLayout>

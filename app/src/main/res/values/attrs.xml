@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PinsView">
+        <attr name="maxCircles" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="InfoRowView">
+        <attr name="title" format="string" />
+        <attr name="info" format="string" />
+    </declare-styleable>
+</resources>

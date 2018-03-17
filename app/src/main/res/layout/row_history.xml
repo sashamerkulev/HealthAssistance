@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="16dp"
+    android:gravity="center"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageview_photo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/id123456781"
+        android:scaleType="centerCrop"
+        android:clickable="false"
+        app:civ_border_width="0dp"
+        app:civ_border_color="#FFFFFFFF"
+        android:layout_centerVertical="true"
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@+id/imageview_photo"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        >
+
+        <TextView
+            android:id="@+id/textview_lastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Алтынбеков"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/textview_firstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Казтуган"
+            android:textColor="@color/gray"
+            android:textSize="14dp"
+            />
+
+        <TextView
+            android:id="@+id/textview_fathername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Жашмидович"
+            android:textColor="@color/gray"
+            android:textSize="14dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

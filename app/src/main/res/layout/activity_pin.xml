@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ru.health.assistance.presentation.pinview.PinActivity"
+    >
+
+        <RelativeLayout
+            android:id="@+id/layout_pinpad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+
+                <TextView
+                    android:id="@+id/textview_enter_pin_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/pinview_password_label"
+                    />
+
+                <ru.health.assistance.presentation.controls.PinsView
+                    android:id="@+id/pins"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_below="@+id/textview_enter_pin_label"
+                    app:maxCircles="6"
+                    />
+
+                <ru.health.assistance.presentation.controls.NumberPinsView
+                    android:id="@+id/number_pins"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_below="@+id/pins"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/layout_call"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_below="@+id/number_pins"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    >
+
+                        <ImageView
+                            android:id="@+id/imageview_call"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_call_black_24dp"
+                            android:tint="@color/colorAccent"
+                            android:clickable="false"
+                            android:layout_centerVertical="true"
+                            tools:ignore="ContentDescription"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pinview_call_label"
+                            android:textAllCaps="true"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_marginStart="8dp"
+                            android:clickable="false"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/imageview_call"
+                            />
+
+                </RelativeLayout>
+
+        </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

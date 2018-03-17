@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Open Eye Project</string>
+    <string name="pinview_password_label">Введите пароль</string>
+    <string name="pinview_call_label">Позвонить нам</string>
+
+    <string name="scan_fragment_title">Скан</string>
+    <string name="info_fragment_title">Инфо</string>
+    <string name="history_fragment_title">История</string>
+    <string name="info_scan_button_title">скан</string>
+</resources>

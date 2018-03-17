@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_call_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/contact_call_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Звонок в контактный центр"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/layout_call_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_call_label"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        >
+
+        <ImageView
+            android:id="@+id/call_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_call_black_24dp"
+            android:tint="@color/colorAccent"
+            android:clickable="false"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            />
+
+        <TextView
+            android:id="@+id/call_number_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="900"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/call_1"
+            android:layout_marginStart="16dp"
+            />
+
+        <TextView
+            android:id="@+id/call_description_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="По России бесплатно (МТС, Билайн, Мегафон, Теле2, Yota)"
+            android:layout_below="@+id/call_number_1"
+            android:layout_toEndOf="@+id/call_1"
+            android:layout_marginStart="16dp"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_call_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_call_1"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        >
+
+        <ImageView
+            android:id="@+id/call_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_call_black_24dp"
+            android:tint="@color/colorAccent"
+            android:clickable="false"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            tools:ignore="ContentDescription"
+            />
+
+        <TextView
+            android:id="@+id/call_number_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8-800-555-35-35"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/call_2"
+            android:layout_marginLeft="16dp"
+            />
+
+        <TextView
+            android:id="@+id/call_description_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="По России бесплатно"
+            android:layout_below="@+id/call_number_2"
+            android:layout_toRightOf="@+id/call_2"
+            android:layout_marginLeft="16dp"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
