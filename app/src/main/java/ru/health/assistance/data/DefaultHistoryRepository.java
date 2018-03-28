@@ -1,41 +1,36 @@
 package ru.health.assistance.data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
 import io.reactivex.Single;
-import ru.health.assistance.App;
-import ru.health.assistance.data.dto.InfoDTO;
+import ru.health.assistance.data.database.DbCache;
+import ru.health.assistance.domain.dto.User;
 
 /**
  * Created by sasha_merkulev on 17.03.2018.
  */
 
 public class DefaultHistoryRepository implements HistoryRepository {
+
+    private final DbCache db;
+
     @Inject
-    DefaultHistoryRepository(){
-
+    DefaultHistoryRepository(DbCache db){
+        this.db = db;
     }
-
-    private boolean exists(String id){
-        boolean result = false;
-        for(String s : App.ids){
-            if (s.equals(id)) {
-                result = true;
-                break;
-            }
-        }
-        return result;
-    }
-
 
     @Override
-    public Single<List<InfoDTO>> getHistories() {
-        List<InfoDTO> result = new ArrayList<>();
-        if (exists("id123456781")) result.add(DefaultInfoRepository.getid123456781());
-        if (exists("id123456782")) result.add(DefaultInfoRepository.getid123456782());
-        return Single.just(result);
+    public Single<List<User>> getHistories() {
+        return db.getUsers()
+                .flattenAsFlowable(userEntities -> userEntities)
+                .map(userEntity -> new User(userEntity.getId(),
+                        userEntity.getMicardSerial(), userEntity.getMicardNumber(),
+                        userEntity.getSurname(), userEntity.getName(), userEntity.getPatronymic(),
+                        userEntity.getBirthDate(), userEntity.getSex(), userEntity.getDocument(),
+                        userEntity.getVisaNumber(), userEntity.getPurpose(), userEntity.getHost(),
+                        userEntity.getPhoto(), userEntity.getFrom(), userEntity.getTo()))
+                .toList();
     }
 }

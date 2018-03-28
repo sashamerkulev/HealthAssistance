@@ -26,7 +26,7 @@ import butterknife.Unbinder;
 import dagger.android.support.AndroidSupportInjection;
 import de.hdodenhof.circleimageview.CircleImageView;
 import ru.health.assistance.R;
-import ru.health.assistance.data.dto.InfoDTO;
+import ru.health.assistance.domain.dto.User;
 import ru.health.assistance.presentation.commons.BaseRecyclerViewAdapter;
 import ru.health.assistance.presentation.commons.DiffUtillCallback;
 import ru.health.assistance.presentation.commons.ItemClickListener;
@@ -94,8 +94,8 @@ public class HistoryFragment extends Fragment implements HistoryView{
     }
 
     @Override
-    public void showHistories(List<InfoDTO> infoDTO) {
-        adapter.setItems(infoDTO);
+    public void showHistories(List<User> users) {
+        adapter.setItems(users);
     }
 
     @Override
@@ -104,15 +104,15 @@ public class HistoryFragment extends Fragment implements HistoryView{
     }
 
     @Override
-    public void showInfo(InfoDTO item) {
+    public void showInfo(User user) {
         if (getActivity() instanceof OnShowInfoCallback){
-            ((OnShowInfoCallback)getActivity()).showInfoCallback(item);
+            ((OnShowInfoCallback)getActivity()).showInfoCallback(user);
         }
     }
 
-    private class HistoryAdapter extends BaseRecyclerViewAdapter<InfoDTO>{
+    private class HistoryAdapter extends BaseRecyclerViewAdapter<User>{
 
-        HistoryAdapter(Context context, List<InfoDTO> items, DiffUtillCallback<InfoDTO> diffCallback, ItemClickListener<InfoDTO> itemClickListener) {
+        HistoryAdapter(Context context, List<User> items, DiffUtillCallback<User> diffCallback, ItemClickListener<User> itemClickListener) {
             super(context, items, diffCallback, itemClickListener);
         }
 
@@ -125,12 +125,12 @@ public class HistoryFragment extends Fragment implements HistoryView{
 
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-            InfoDTO item = items.get(position);
+            User item = items.get(position);
             InfoViewHolder info = (InfoViewHolder)holder;
 
-            info.fathername.setText(item.getFatherName());
+            info.fathername.setText(item.getPatronymic());
             info.firstname.setText(item.getName());
-            info.lastname.setText(item.getLastName());
+            info.lastname.setText(item.getSurname());
 
             int productImageId = getContext().getResources().getIdentifier(item.getId(), "drawable", getContext().getPackageName());
             Glide.with(getContext()).load(productImageId).into(info.avatar);
@@ -161,6 +161,6 @@ public class HistoryFragment extends Fragment implements HistoryView{
     }
 
     public interface OnShowInfoCallback{
-        void showInfoCallback(InfoDTO item);
+        void showInfoCallback(User item);
     }
 }

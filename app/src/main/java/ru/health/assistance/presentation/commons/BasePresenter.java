@@ -10,7 +10,7 @@ import io.reactivex.disposables.CompositeDisposable;
 public abstract class BasePresenter<T> {
 
     protected T view;
-    private CompositeDisposable compositeDisposable;
+    protected CompositeDisposable compositeDisposable;
 
     protected BasePresenter() {
         compositeDisposable = new CompositeDisposable();

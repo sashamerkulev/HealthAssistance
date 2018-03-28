@@ -20,7 +20,7 @@ public class DefaultInfoPresenter extends BasePresenter<InfoView>{
     }
 
     void setId(String id) {
-        info.getInfo(id)
+        compositeDisposable.add(info.getInfo(id)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(infoDTO -> {
                     if (view == null) return;
@@ -28,6 +28,6 @@ public class DefaultInfoPresenter extends BasePresenter<InfoView>{
                 }, throwable -> {
                     if (view == null) return;
                     view.showErrorMessage(throwable.getMessage());
-                });
+                }));
     }
 }

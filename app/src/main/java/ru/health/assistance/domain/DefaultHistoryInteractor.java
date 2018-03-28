@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import io.reactivex.Scheduler;
 import io.reactivex.Single;
 import ru.health.assistance.data.HistoryRepository;
-import ru.health.assistance.data.dto.InfoDTO;
+import ru.health.assistance.domain.dto.User;
 
 /**
  * Created by sasha_merkulev on 17.03.2018.
@@ -25,7 +25,7 @@ public class DefaultHistoryInteractor implements HistoryInteractor {
     }
 
     @Override
-    public Single<List<InfoDTO>> getHistories() {
+    public Single<List<User>> getHistories() {
         return repo.getHistories()
                 .subscribeOn(scheduler);
     }

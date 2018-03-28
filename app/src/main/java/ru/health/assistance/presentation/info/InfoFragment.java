@@ -24,9 +24,8 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import dagger.android.support.AndroidSupportInjection;
 import de.hdodenhof.circleimageview.CircleImageView;
-import ru.health.assistance.App;
 import ru.health.assistance.R;
-import ru.health.assistance.data.dto.InfoDTO;
+import ru.health.assistance.data.dto.UserDTO;
 import ru.health.assistance.presentation.controls.InfoRowView;
 
 /**
@@ -115,25 +114,25 @@ public class InfoFragment extends Fragment implements InfoView{
     }
 
     @Override
-    public void showInfo(InfoDTO infoDTO) {
+    public void showInfo(UserDTO infoDTO) {
 
         int productImageId = getContext().getResources().getIdentifier(infoDTO.getId(), "drawable", getContext().getPackageName());
         Glide.with(getContext()).load(productImageId).into(avatar);
 
-        lastname.setText(infoDTO.getLastName());
+        lastname.setText(infoDTO.getSurname());
         firstname.setText(infoDTO.getName());
-        fathername.setText(infoDTO.getFatherName());
+        fathername.setText(infoDTO.getPatronymic());
         sex.setText(infoDTO.getSex());
 
         @SuppressLint("SimpleDateFormat")
         SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy");
         birthdate.setInfo(format.format(infoDTO.getBirthDate()));
 
-        birthplace.setInfo(infoDTO.getBirthPlace());
-        nationality.setInfo(infoDTO.getNationality());
-        livingplace.setInfo(String.format(Locale.getDefault(), "%s, %s\n%s",
-                infoDTO.getLivingPostcode(), infoDTO.getLivingCity(), infoDTO.getLivingAddress()));
-        cause.setInfo(infoDTO.getCause());
+//        birthplace.setInfo(infoDTO.getBirthPlace());
+//        nationality.setInfo(infoDTO.getNationality());
+//        livingplace.setInfo(String.format(Locale.getDefault(), "%s, %s\n%s",
+//                infoDTO.getLivingPostcode(), infoDTO.getLivingCity(), infoDTO.getLivingAddress()));
+//        cause.setInfo(infoDTO.getCause());
     }
 
     @Override

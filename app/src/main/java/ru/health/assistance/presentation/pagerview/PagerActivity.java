@@ -20,7 +20,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 import ru.health.assistance.R;
-import ru.health.assistance.data.dto.InfoDTO;
+import ru.health.assistance.domain.dto.User;
 import ru.health.assistance.presentation.history.HistoryFragment;
 import ru.health.assistance.presentation.info.InfoActivity;
 import ru.health.assistance.presentation.info.InfoFragment;
@@ -84,7 +84,7 @@ public class PagerActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void showInfoCallback(InfoDTO item) {
+    public void showInfoCallback(User item) {
         finish();
         InfoActivity.show(this, item.getId());
     }

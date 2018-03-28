@@ -2,15 +2,15 @@ package ru.health.assistance.presentation.history;
 
 import java.util.List;
 
-import ru.health.assistance.data.dto.InfoDTO;
+import ru.health.assistance.domain.dto.User;
 
 /**
  * Created by sasha_merkulev on 17.03.2018.
  */
 
 interface HistoryView {
-    void showHistories(List<InfoDTO> infoDTO);
+    void showHistories(List<User> infoDTO);
     void showErrorMessage(String message);
 
-    void showInfo(InfoDTO item);
+    void showInfo(User item);
 }
